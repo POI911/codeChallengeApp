@@ -28,7 +28,7 @@
                          {{ $solution->challenge_id }}
                     </td>
                     <td>
-                        <a href="{{ $solution->solution_link }}">  Solution Link</a>
+                        <a href="{{ $solution->solution_link }}" target="_blank">  Solution Link</a>
                     </td>
                 </tr>
             @endforeach
