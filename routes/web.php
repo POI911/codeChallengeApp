@@ -62,7 +62,7 @@ Route::get('/add_solution_query', function(){
 Route::get('/challenges', function() {
     $challenges = DB::table('challenges')
     ->join('users', 'user_id', '=', 'users.id')
-    ->get();
+    ->get(['challenges.id', 'users.name', 'challenge_link']);
     return view('challenges', ['challenges' => $challenges ]);
 });
 
@@ -73,3 +73,5 @@ Route::get('/solutions', function(){
     ->get();
     return view('solutions', [ 'solutions' => $solutions]);
 });
+
+// SELECT challenges.id, users.name, challenge_link FROM `challenges` JOIN users WHERE user_id = users.id;
