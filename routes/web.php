@@ -74,4 +74,4 @@ Route::get('/solutions', function(){
     return view('solutions', [ 'solutions' => $solutions]);
 });
 
-// SELECT challenges.id, users.name, challenge_link FROM `challenges` JOIN users WHERE user_id = users.id;
+
