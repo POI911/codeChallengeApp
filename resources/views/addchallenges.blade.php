@@ -29,7 +29,7 @@
       </div>
       <div class="flex justify-evenly flex-col gap-3 mb-5">
         <label for="challengeLink" class="text-xl mr-24 "
-          >Solution Link
+          >Challenge Link
         </label>
         <input
           class=" border-solid border-2 rounded-lg text-lg px-3 py-2 border-raizer-400"
@@ -41,15 +41,14 @@
         <div class="flex justify-evenly flex-col">
             <button class="text-2xl" type="submit">Submit</button>
           </div>
-          <button class="mt-8">
-            <a class="text-raizer-400 py-5 px-6 bg-slate-800 rounded-full" href="/"
-              ><i class="fa-solid fa-arrow-left text-lg md:text-xl"></i
-            ></a>
-          </button>
-
 </form>
 
-
+<div>
+    <button class="mt-8">
+      <a class="text-raizer-400 py-5 px-6 bg-slate-800 rounded-full" href="/">
+      <i class="fa-solid fa-arrow-left text-lg md:text-xl"></i></a>
+    </button>
+    </div>
 
 </body>
 <script
