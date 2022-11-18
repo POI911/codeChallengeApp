@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChallengeController;
+use App\Http\Controllers\SolutionController;
 use App\Models\Solution;
 use Illuminate\Support\Facades\Route;
 use Psy\CodeCleaner\CalledClassPass;
@@ -17,7 +18,6 @@ use Illuminate\Support\Facades\DB;
 */
 
 
-
 Route::get('/', function () {
     return view('index');
 });
@@ -28,43 +28,23 @@ Route::get('/addchallenges', function() {
 });
 
 
-
-// a Form Get request to insert the challenge to the database
-Route::get('/add_challenge_query', [ChallengeController::class, 'create']);
-
-
 // view the add solution page
 Route::get('/submitsolution', function() {
 
     return view('submitsolution');
 });
 
+
+Route::get('/solutions', [SolutionController::class, "index"]);
 // a Form Get request to insert the solution to the database
-Route::get('/add_solution_query', function(){
+Route::get('/add_solution_query', [SolutionController::class, "create"]);
 
 
-        Solution::create([
-            'user_id' => request("userID"),
-            'challenge_name' => request("challengeName"),
-            'solution_link' => request('solutionLink')
-        ]);
 
-
-    return view('submitsolution');
-});
-
-
-//
-// View all added challenges
 Route::get('/challenges', [ChallengeController::class, "index"]);
+// a Form Get request to insert the challenge to the database
+Route::get('/add_challenge_query', [ChallengeController::class, 'create']);
 
-// View all submitted solutions
-Route::get('/solutions', function(){
-    $solutions = DB::table('solutions')
-    ->join('users', 'user_id', '=', 'users.id')
-    ->get();
-    return view('solutions', [ 'solutions' => $solutions]);
-});
 
 
 
