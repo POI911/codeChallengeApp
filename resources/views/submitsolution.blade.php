@@ -31,13 +31,13 @@
       </div>
       <div class="flex justify-evenly flex-col gap-3 mb-5">
         <label for="challengeID" class="text-xl mr-24 "
-          >Challenge ID
+          >Challenge Name
         </label>
         <input
           class=" border-solid border-2 rounded-lg text-lg px-3 py-2 border-raizer-400"
-          type="number"
-          min="0"
-          name="challengeID"
+          type="text"
+
+          name="challengeName"
         />
       </div>
       <div class="flex justify-evenly flex-col gap-3 mb-5">
@@ -47,7 +47,7 @@
         <input
           class=" border-solid border-2 rounded-lg text-lg px-3 py-2 border-raizer-400"
           type="text"
-          name="solutionID"
+          name="solutionLink"
         />
       </div>
       <div class="flex justify-evenly flex-col">

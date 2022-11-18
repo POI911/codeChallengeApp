@@ -18,7 +18,7 @@
       <table class="border-raizer-400 w-full bg-slate-800 mx-auto rounded-2xl">
         <thead>
           <th class="text-white text-center w-1/5 md:text-xl">Name</th>
-          <th class="text-white text-center w-1/5 md:text-xl">challenge ID</th>
+          <th class="text-white text-center w-1/5 md:text-xl">challenge Name</th>
           <th class="text-white text-center w-2/5 md:text-xl">Solution Link</th>
         </thead>
         <tbody>
@@ -28,7 +28,7 @@
               {{ $solution->name}}
             </td>
             <td class="text-white text-center md:text-lg pt-5 pb-3">
-              {{ $solution->challenge_id }}
+              {{ $solution->challenge_name }}
             </td>
             <td class="text-white text-center md:text-lg pt-5 pb-3">
               <a href="{{ $solution->solution_link }}" target="_blank">

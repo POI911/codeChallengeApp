@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('challenges', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('user_id');
+            $table->string('challenge_name')->unique();
             $table->string('challenge_link');
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();

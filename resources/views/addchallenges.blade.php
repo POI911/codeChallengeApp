@@ -28,6 +28,19 @@
           <option value="4">Naser</option>
         </select>
       </div>
+
+      <div class="flex justify-evenly flex-col gap-3 mb-5">
+        <label for="challengeName" class="text-xl mr-24 "
+          >Challenge Name
+        </label>
+        <input
+          class=" border-solid border-2 rounded-lg text-lg px-3 py-2 border-raizer-400"
+          type="text"
+          name="challengeName"
+        />
+      </div>
+
+
       <div class="flex justify-evenly flex-col gap-3 mb-5">
         <label for="challengeLink" class="text-xl mr-24 "
           >Challenge Link

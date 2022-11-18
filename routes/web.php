@@ -34,7 +34,8 @@ Route::get('/add_challenge_query', function() {
 
 
     Challenge::create(['user_id' => request("userID"),
-    'challenge_link' => request("challengeLink")
+    'challenge_link' => request("challengeLink"),
+    'challenge_name' => request('challengeName')
 
 ]);
     return view('addchallenges');
@@ -52,8 +53,8 @@ Route::get('/add_solution_query', function(){
 
         Solution::create([
             'user_id' => request("userID"),
-            'challenge_id' => request("challengeID"),
-            'solution_link' => request('solutionID')
+            'challenge_name' => request("challengeName"),
+            'solution_link' => request('solutionLink')
         ]);
 
 
@@ -66,7 +67,7 @@ Route::get('/add_solution_query', function(){
 Route::get('/challenges', function() {
     $challenges = DB::table('challenges')
     ->join('users', 'user_id', '=', 'users.id')
-    ->get(['challenges.id', 'users.name', 'challenge_link']);
+    ->get(['challenges.id', 'users.name', 'challenge_link', 'challenge_name']);
     return view('challenges', ['challenges' => $challenges ]);
 });
 
@@ -77,9 +78,6 @@ Route::get('/solutions', function(){
     ->get();
     return view('solutions', [ 'solutions' => $solutions]);
 });
-
-
-
 
 
 
