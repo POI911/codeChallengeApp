@@ -48,11 +48,15 @@ Route::get('/submitsolution', function() {
 
 // a Form Get request to insert the solution to the database
 Route::get('/add_solution_query', function(){
-    Solution::create([
-        'user_id' => request("userID"),
-        'challenge_id' => request("challengeID"),
-        'solution_link' => request('solutionID')
-    ]);
+
+
+        Solution::create([
+            'user_id' => request("userID"),
+            'challenge_id' => request("challengeID"),
+            'solution_link' => request('solutionID')
+        ]);
+
+
     return view('submitsolution');
 });
 
@@ -73,5 +77,9 @@ Route::get('/solutions', function(){
     ->get();
     return view('solutions', [ 'solutions' => $solutions]);
 });
+
+
+
+
 
 
