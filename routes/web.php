@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::post('/register', function() {
+    return view('register');
+});
+
 // view the add challenge page
 Route::get('/addchallenges', function() {
     return view('addchallenges');
