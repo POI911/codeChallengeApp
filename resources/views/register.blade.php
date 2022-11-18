@@ -10,11 +10,11 @@
   <body>
 
 
-            <form method="post" action="/register">
+            <form method="POST" action="/register">
                 @csrf
                 <div>
-                <label for="username">Enter username</label>
-                <input  type="text" name='username' id="username" required>
+                <label for="name">Enter username</label>
+                <input  type="text" name='name' id="name" required>
                 <br>
                 <label for="email">Enter E-mail</label>
                 <input type="email" name="email" id="email" required>
@@ -22,12 +22,20 @@
                 <label for="password">Enter Password</label>
                 <input type="password" name="password" id="password" required>
                 <br>
-                <label for="password2">Repeat Password</label>
-                <input type="password" name="password2" id="password2" required>
-                <br>
-
                 <input type="submit" name="submit">
+
+                <!-- Displaying error messages (e.g in case password is shorter than 7 chars) -->
+                @if ($errors->any())
+                <ul>
+                @foreach ($errors->all() as $error )
+                    <li> {{ $error }} </li>
+                @endforeach
+                </ul>
+                @endif
+
                 </div>
+
+
             </form>
 
 
