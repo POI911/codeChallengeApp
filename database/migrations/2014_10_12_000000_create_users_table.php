@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('email')->unique();
             $table->text('password');
-
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 
