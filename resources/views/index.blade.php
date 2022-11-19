@@ -9,6 +9,18 @@
     <title>To-Do Challenges</title>
   </head>
   <body>
+
+        @auth
+            <span>Welcome, {{ auth()->user()->name }}</span>
+            <form method="post" action="/logout">
+                @csrf
+                <button type="submit">Log Out!</button>
+            </form>
+        @else
+        <a href="/register">Register!</a>
+        <a href="/login">Log In!</a>
+        @endauth
+
     <div class="container mx-auto h-screen flex flex-col px-4">
       <h1
         class="text-4xl md:text-5xl text-raizer-400 text-center pt-12 md:pt-32"
@@ -55,6 +67,9 @@
         </div>
       </div>
     </div>
+
+
+
   </body>
   <script
     src="https://kit.fontawesome.com/33ef633056.js"

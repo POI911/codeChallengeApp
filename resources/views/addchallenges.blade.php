@@ -15,20 +15,17 @@
   </h1>
 <form class=" mx-auto mb-7 md:w-1/2 px-8" method="get" action="/add_challenge_query">
     <div class="flex justify-evenly flex-col gap-3 mb-5">
-        <label class="text-xl mr-24  for="names">Who are you?</label>
+        @auth
+            <label class="text-xl mr-24  for="names">User</label>
         <select
           class="border-solid border-2 rounded-lg text-lg px-3 py-2 border-raizer-400 transition-all"
           name="userID"
-          id="names"
-        >
-        <option  value="">Select User</option>
-          <option value="1">Ayham</option>
-          <option value="2">Shayyah</option>
-          <option value="3">Zed</option>
-          <option value="4">Naser</option>
-        </select>
-      </div>
+          id="names">
 
+        <option value="{{ auth()->user()->id }}">{{ auth()->user()->name }}</option>
+        </select>
+
+    </div>
       <div class="flex justify-evenly flex-col gap-3 mb-5">
         <label for="challengeName" class="text-xl mr-24 "
           >Challenge Name
@@ -56,6 +53,9 @@
             <button class="text-2xl" type="submit">Submit</button>
           </div>
 </form>
+@else
+        <label class="text-xl mr-24  for="names">You have to <a href='/login'>log in</a> First</label>
+    @endauth
 
 <div>
     <button class="mt-8">
