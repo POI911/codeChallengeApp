@@ -52,7 +52,7 @@
         <div
           class="md:w-1/4 w-full mx-auto border-solid border-2 py-10 px-1 md:py-16 hover:border-raizer-400 rounded-lg shadow-lg transition-all"
         >
-          <a class="flex flex-col items-center" href="/submitsolution">
+          <a class="flex flex-col items-center" href="/addsolution">
             <i class="fa-solid fa-handshake text-raizer-400 text-5xl"></i>
             <h3 class="text-xl md:text-2xl pt-8">Submit a Solution</h3>
           </a>

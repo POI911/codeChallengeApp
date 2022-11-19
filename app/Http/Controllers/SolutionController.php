@@ -19,12 +19,12 @@ class SolutionController extends Controller
     public function create(){
 
         Solution::create([
-            'user_id' => request("userID"),
+            'user_id' => auth()->user()->id,
             'challenge_name' => request("challengeName"),
             'solution_link' => request('solutionLink')
         ]);
 
 
-    return view('submitsolution');
+    return view('addsolution');
     }
 }

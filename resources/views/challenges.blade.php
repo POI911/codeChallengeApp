@@ -53,7 +53,7 @@
           <h3 class="text-raizer-400 text-lg md:text-xl">
             <a
               class="px-3 py-3 md:py-3 md:px-4 bg-slate-800 rounded-2xl"
-              href="/submitsolution"
+              href="/addsolution"
               >Submit a Solution</a
             >
           </h3>

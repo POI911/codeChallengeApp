@@ -40,21 +40,21 @@ Route::get('/addchallenges', function() {
 
 
 // view the add solution page
-Route::get('/submitsolution', function() {
+Route::get('/addsolution', function() {
 
-    return view('submitsolution');
+    return view('addsolution');
 });
 
 
 Route::get('/solutions', [SolutionController::class, "index"]);
 // a Form Get request to insert the solution to the database
-Route::get('/add_solution_query', [SolutionController::class, "create"])->middleware("auth");
+Route::post('/addsolution', [SolutionController::class, "create"])->middleware("auth");
 
 
 
 Route::get('/challenges', [ChallengeController::class, "index"]);
 // a Form Get request to insert the challenge to the database
-Route::get('/add_challenge_query', [ChallengeController::class, 'create'])->middleware("auth");
+Route::post('/addchallenges', [ChallengeController::class, 'create'])->middleware("auth");
 
 
 

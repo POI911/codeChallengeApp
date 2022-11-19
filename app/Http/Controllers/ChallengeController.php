@@ -21,7 +21,7 @@ class ChallengeController extends Controller
 
 public function create(){
 
-    Challenge::create(['user_id' => request("userID"),
+    Challenge::create(['user_id' => auth()->user()->id,
     'challenge_link' => request("challengeLink"),
     'challenge_name' => request('challengeName')]);
 
