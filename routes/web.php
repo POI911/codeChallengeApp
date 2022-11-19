@@ -33,29 +33,14 @@ Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')
 
 
 
-// view the add challenge page
-Route::get('/addchallenges', function() {
-    return view('addchallenges');
-});
-
-
-// view the add solution page
-Route::get('/addsolution', function() {
-
-    return view('addsolution');
-});
-
-
 Route::get('/solutions', [SolutionController::class, "index"]);
-// a Form Get request to insert the solution to the database
-Route::post('/addsolution', [SolutionController::class, "create"])->middleware("auth");
-
+Route::get('/addsolution', [SolutionController::class, "create"])->middleware("auth");
+Route::post('/addsolution', [SolutionController::class, "store"])->middleware("auth");
 
 
 Route::get('/challenges', [ChallengeController::class, "index"]);
-// a Form Get request to insert the challenge to the database
-Route::post('/addchallenges', [ChallengeController::class, 'create'])->middleware("auth");
-
+Route::get('/addchallenges', [ChallengeController::class, 'create'])->middleware("auth");
+Route::post('/addchallenges', [ChallengeController::class, 'store'])->middleware("auth");
 
 
 

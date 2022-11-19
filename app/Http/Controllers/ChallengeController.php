@@ -16,10 +16,12 @@ class ChallengeController extends Controller
     }
 
 
-
-
-
 public function create(){
+    return view('addchallenges');
+}
+
+
+public function store(){
 
     Challenge::create(['user_id' => auth()->user()->id,
     'challenge_link' => request("challengeLink"),

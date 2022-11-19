@@ -14,9 +14,11 @@ class SolutionController extends Controller
         return view('solutions', [ 'solutions' => $solutions]);
 
     }
-
-
     public function create(){
+        return view('addsolution');
+    }
+
+    public function store(){
 
         Solution::create([
             'user_id' => auth()->user()->id,
