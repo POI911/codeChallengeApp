@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 Route::get('register', [RegisterController::class, "create"])->middleware('guest');
-Route::post('register', [RegisterController::class, "store"]);
+Route::post('register', [RegisterController::class, "store"])->middleware('guest');
 
 Route::get('login', [SessionController::class, 'create'])->middleware(('guest'));
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
@@ -34,12 +34,12 @@ Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth')
 
 
 Route::get('/solutions', [SolutionController::class, "index"]);
-Route::get('/addsolution', [SolutionController::class, "create"])->middleware("auth");
+Route::get('/addsolution', [SolutionController::class, "create"]);
 Route::post('/addsolution', [SolutionController::class, "store"])->middleware("auth");
 
 
 Route::get('/challenges', [ChallengeController::class, "index"]);
-Route::get('/addchallenges', [ChallengeController::class, 'create'])->middleware("auth");
+Route::get('/addchallenges', [ChallengeController::class, 'create']);
 Route::post('/addchallenges', [ChallengeController::class, 'store'])->middleware("auth");
 
 
