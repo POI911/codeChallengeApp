@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles1.css" />
 
-    <title>To-Do Challenges</title>
+    <title>Code Challenges</title>
   </head>
   <body>
     <div class="container mx-auto px-8">
@@ -17,6 +17,7 @@
       </h1>
       <table class="border-raizer-400 w-full bg-slate-800 mx-auto rounded-2xl">
         <thead>
+         <th class="text-white text-center w-1/5 md:text-xl">Week</th>
           <th class="text-white text-center w-1/5 md:text-xl">Name</th>
           <th class="text-white text-center w-1/5 md:text-xl">challenge Name</th>
           <th class="text-white text-center w-2/5 md:text-xl">Solution Link</th>
@@ -24,6 +25,9 @@
         <tbody>
           @foreach ($solutions as $solution)
           <tr class="pt-8">
+            <td class="text-white text-center md:text-lg pt-5 pb-3">
+                {{ $solution->solution_week_number}}
+              </td>
             <td class="text-white text-center md:text-lg pt-5 pb-3">
               {{ $solution->name}}
             </td>
