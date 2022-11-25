@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles1.css" />
+    <title>Code Challenges</title>
   </head>
 
   <body class="h-full">
@@ -44,7 +45,7 @@
               <label for="username" class="sr-only">Username</label>
               <input
                 id="username"
-                name="username"
+                name="name"
                 type="text"
                 autocomplete="text"
                 required
