@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles1.css" />
 
-    <title>To-Do Challenges</title>
+    <title>Code Challenges</title>
 </head>
 <body>
 
@@ -16,6 +16,18 @@
   @auth
 <form class=" mx-auto mb-7 md:w-1/2 px-8" method="post" action="/addchallenges">
     @csrf
+    <div class="flex justify-evenly flex-col gap-3 mb-5">
+        <label for="week_number" class="text-xl mr-24 "
+          >Week Number
+        </label>
+        <input
+          class=" border-solid border-2 rounded-lg text-lg px-3 py-2 border-raizer-400"
+          type="text"
+          name="challenge_week_number"
+        />
+      </div>
+
+
       <div class="flex justify-evenly flex-col gap-3 mb-5">
         <label for="challengeName" class="text-xl mr-24 "
           >Challenge Name
