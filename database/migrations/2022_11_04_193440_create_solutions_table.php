@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('solutions', function (Blueprint $table) {
             $table->foreignId("user_id");
+            $table->integer('solution_week_number');
             $table->string('challenge_name');
             $table->string('solution_link');
             $table->timestamp('updated_at')->nullable();

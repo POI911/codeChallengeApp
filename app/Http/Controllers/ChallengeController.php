@@ -10,7 +10,7 @@ class ChallengeController extends Controller
     public function index(){
         $challenges = DB::table('challenges')
     ->join('users', 'user_id', '=', 'users.id')
-    ->get(['challenges.id', 'users.name', 'challenge_link', 'challenge_name']);
+    ->get(['challenges.id', 'users.name', 'challenge_link', 'challenge_name', 'challenge_week_number']);
     return view('challenges', ['challenges' => $challenges ]);
 
     }
@@ -24,6 +24,7 @@ public function create(){
 public function store(){
 
     Challenge::create(['user_id' => auth()->user()->id,
+    'challenge_week_number' => request("challenge_week_number"),
     'challenge_link' => request("challengeLink"),
     'challenge_name' => request('challengeName')]);
 
