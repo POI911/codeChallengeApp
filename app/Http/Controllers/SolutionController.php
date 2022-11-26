@@ -21,13 +21,9 @@ class SolutionController extends Controller
     }
 
     public function store(){
-        # this return a collection of objects containing the week id
-        $week = DB::table('challenges')
-        ->where('challenge_name', '=', request('challengeName') )
-        ->get('challenge_week_number');
-        # get the week number from the collection of objects
-        $week_number = $week->get(0)->challenge_week_number;
-
+        $week_number = Challenge::where('challenge_name', request("challengeName"))
+        ->first()
+        ->challenge_week_number;
 
         Solution::create([
             'user_id' => auth()->user()->id,
