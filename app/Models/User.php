@@ -44,6 +44,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function challenge(){
+        return $this->hasMany(Challenge::class);
+    }
+
+    public function solution(){
+        return $this->hasMany(Solution::class);
+    }
+
+
     public function setPasswordAttribute($password){
         $this->attributes['password'] = bcrypt($password);
     }
