@@ -30,7 +30,11 @@
     >
       <div class="w-full max-w-md space-y-8">
         <div>
-
+          <img
+            class="mx-auto h-12 w-auto"
+            src="https://raizer.tech/assetsPreviuos/image/logo/Raizer_logo.png"
+            alt="Your Company"
+          />
           <h2
             class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-600"
           >
