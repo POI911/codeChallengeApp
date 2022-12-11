@@ -11,14 +11,19 @@
   <body>
 
         @auth
-            <span>Welcome, {{ auth()->user()->name }}</span>
+            <span class="my-6 text-xl font-medium">Welcome, {{ auth()->user()->name }}</span>
             <form method="post" action="/logout">
                 @csrf
-                <button type="submit">Log Out!</button>
+                <button class="px-3 py-2 bg-raizer-400 rounded text-white" type="submit">Log Out!</button>
             </form>
         @else
-        <a href="/register">Register!</a>
-        <a href="/login">Log In!</a>
+        <div class="flex gap-6">
+          <a class="px-3 py-2 bg-raizer-400 rounded text-white" href="/register"
+            >Register!</a
+          >
+
+          <a class="px-4 py-3 rounded text-raizer-400" href="/login">Log In!</a>
+        </div>
         @endauth
 
     <div class="container mx-auto h-screen flex flex-col px-4">
